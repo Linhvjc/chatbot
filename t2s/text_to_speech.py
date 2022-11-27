@@ -1,8 +1,8 @@
 from aspeak import SpeechToSpeakerService, ResultReason
 
+speech = SpeechToSpeakerService()
 def say(text = "Nothing to say"):
     try:
-        speech = SpeechToSpeakerService()
         result = speech.text_to_speech(text,voice="en-US-JennyNeural", rate="+0%", pitch="+30%", style="cheerful")
         if result.reason != ResultReason.SynthesizingAudioCompleted:
             print("Failed to synthesize speech.")
